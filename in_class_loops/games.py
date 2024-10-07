@@ -10,3 +10,9 @@ print(f"There are {i} games in this list.")
 print(f"These are my favorite games: ")
 for game in games:
     print(game)
+
+for game in games: 
+    if game == "Minecraft":
+        print(game.upper())
+    else: 
+        print(game.title())
