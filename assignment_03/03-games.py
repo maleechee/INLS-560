@@ -15,4 +15,4 @@ for game in games:
     if game == "Minecraft":
         print(game.upper())
     else: 
-        print(game.title())
+        print(game.lower())
