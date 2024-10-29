@@ -9,9 +9,11 @@ for car in cars:
 
 cars_string = "audi bmw subaru toyota"
 print(f"{cars_string[0:5]}")
+# [0:] - 0 and remaining
 
 i = 0
 
 for car in cars:
     i += 1
 print(f"There are {i} car brands in this list.")
+
