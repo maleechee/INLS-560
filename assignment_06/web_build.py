@@ -1,20 +1,25 @@
 import os
 import re
 
+# In the slugify function, an 'if' statement is being used to check for and 
+# correct the name of the main page of the website to 'index.html.'
 def slugify(title):
     """Convert the page title to a filename-friendly slug."""
     if title.lower() == "home":  # Ensure 'Home' becomes 'index.html'
         return "index.html"
-    return re.sub(r'\W+', '-', title.strip().lower()) + ".html"
+    return re.sub(r'\W+', '-', title.strip().lower()) + ".html" # regex
 
+# In the function below, the for loop is being used to 
+# iterate through titles and create links for each.
 def generate_nav(titles, active_title):
     """Generate a dynamic navigation bar with an active page highlight."""
     nav_links = ""
-    for title in titles:
+    for title in titles: # for loop
         filename = slugify(title)
         active_class = ' class="active"' if title == active_title else ""
-        nav_links += f'\t\t\t<a href="{filename}"{active_class}>{title}</a>\n'
+        nav_links += f'\t\t\t<a href="{filename}"{active_class}>{title}</a>\n' #f-string
     return nav_links.strip()
+
 
 def create_html_file(title, titles, output_dir="build"):
     """Generate and write HTML content based on the page title."""
@@ -40,29 +45,29 @@ def create_html_file(title, titles, output_dir="build"):
         </div>
     </body>
     </html>
-    """
+    """ # f-string
 
     output_path = os.path.join(output_dir, filename)
     os.makedirs(output_dir, exist_ok=True)  # Ensure the directory exists
 
-    with open(output_path, 'w') as file:
-        file.write(html_content)
+    with open(output_path, 'w') as file: # the with open() as file
+        file.write(html_content) # file.write used
 
-    print(f"Created {filename} in the '{output_dir}' directory.")
+    print(f"Created {filename} in the '{output_dir}' directory.") # f-string
 
 def create_css_file():
-    pass
+    pass # pass statement used
 
 def main():
     """Main function to generate pages and styles. MUST HAVE HOME!!!"""
-    titles = ["Home", "About Me", "My Experience", "My Projects"]
+    titles = ["Home", "About Me", "My Experience", "My Projects"] # dictionary 
 
     # Create HTML files for each title
-    for title in titles:
+    for title in titles: #for loop
         create_html_file(title, titles)
 
     # Create the style.css file
-    #create_css_file() 
+    create_css_file() 
     # uncomment the create_css_file() function if you add the function.
 
 if __name__ == "__main__":
@@ -114,7 +119,7 @@ def create_css_file(output_dir="build"):
     """
 
     css_path = os.path.join(output_dir, "style.css")
-    with open(css_path, 'w') as file:
-        file.write(css_content)
+    with open(css_path, 'w') as file: # open() as file
+        file.write(css_content) # file.write
 
-    print(f"Created style.css in the '{output_dir}' directory.")
+    print(f"Created style.css in the '{output_dir}' directory.") # f-string
