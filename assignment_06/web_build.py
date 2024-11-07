@@ -1,5 +1,5 @@
-import os
-import re
+import os # method
+import re # method
 
 # In the slugify function, an 'if' statement is being used to check for and 
 # correct the name of the main page of the website to 'index.html.'
