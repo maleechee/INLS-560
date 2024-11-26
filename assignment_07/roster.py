@@ -15,4 +15,4 @@ data['bmi'] = round((data['weight']/2.205)/((data['height']/39.37)**2), 2)
 
 print(data)
 
-data.to_csv('bmi.csv')
+data.to_csv('assignment_07/bmi.csv')
