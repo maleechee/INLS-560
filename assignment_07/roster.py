@@ -7,7 +7,10 @@ print(roster)
 for name in roster:
     print(name)
 
-player = {'Last Name': roster}
+player = {'Last Name': roster,
+          'First Name': ['James', 'RJ', 'Cade'],
+          'height': [82, 72, 79],
+          'weight': [215, 180, 200]}
 
-data = pd.DataFrame[roster]
+data = pd.DataFrame(player)
 print(data)
