@@ -7,5 +7,7 @@ print(roster)
 for name in roster:
     print(name)
 
+player = {'Last Name': roster}
+
 data = pd.DataFrame[roster]
 print(data)
